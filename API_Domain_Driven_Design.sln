@@ -25,11 +25,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrossCutting", "CrossCutting\CrossCutting.csproj", "{0E641611-374D-480E-9C54-A6875C83CE19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Data.Test", "Api.Data.Test\Api.Data.Test.csproj", "{2DFA3CA0-3EC4-4ACC-8DB5-BE65EC2FC8AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Data.Test", "Api.Data.Test\Api.Data.Test.csproj", "{2DFA3CA0-3EC4-4ACC-8DB5-BE65EC2FC8AC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{2BC50EF9-8D0D-41B2-8561-1390F283C78B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Service.Test", "Api.Service.Test\Api.Service.Test.csproj", "{71BD1F8C-5BC8-4378-BE02-BAE7878D2B17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Service.Test", "Api.Service.Test\Api.Service.Test.csproj", "{71BD1F8C-5BC8-4378-BE02-BAE7878D2B17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
