@@ -1,4 +1,39 @@
-# API_Domain_Driven_Design
+#  CRUD API com Arquitetura DDD
+
+Descrição:
+Este projeto é uma implementação de uma API RESTful para operações CRUD (Create, Read, Update, Delete), seguindo os princípios de Domain-Driven Design (DDD). O Domain-Driven Design é uma abordagem que promove a organização do código em torno do domínio da aplicação, resultando em um sistema mais modular, escalável e de fácil manutenção.
+
+Recursos Principais:
+
+Operações CRUD para entidades essenciais.
+Estrutura modular baseada em conceitos de DDD.
+Utilização de padrões de design para aumentar a flexibilidade e extensibilidade.
+Integração com ferramentas populares de persistência de dados.
+Tecnologias Utilizadas:
+
+Linguagem de Programação: 
+<p align="left">
+  🦄 Language: <strong> 
+  
+  ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
+  </strong>
+</p>
+<p align="left">
+  💼 IDE/Tools: <strong>
+  
+  ![Visual Studio](https://img.shields.io/badge/Visual_Studio-5C2D91?style=for-the-badge&logo=visual%20studio&logoColor=white)
+  
+  </strong>
+</p>
+Banco de Dados: [Inserir Banco de Dados Utilizado]
+Ferramentas de Teste: [Inserir Ferramentas de Teste Utilizadas, se aplicável]
+Instruções de Uso:
+
+Clone o repositório.
+Instale as dependências necessárias.
+Configure as conexões com o banco de dados.
+Execute a aplicação.
+
 
 <p align="left">
 
@@ -12,18 +47,5 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/VitorDietrich-Coder/API_Domain_Driven_Design?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/VitorDietrich-Coder/API_Domain_Driven_Design?style=for-the-badge)
 
-<p align="left">
-  🦄 Language: <strong> 
-  
-  ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
-  </strong>
-</p>
 
-<p align="left">
-  💼 IDE/Tools: <strong>
-  
-  ![Visual Studio](https://img.shields.io/badge/Visual_Studio-5C2D91?style=for-the-badge&logo=visual%20studio&logoColor=white)
-  
-  </strong>
-</p>
 <hr>
