@@ -11,7 +11,6 @@ Utilização de padrões de design para aumentar a flexibilidade e extensibilida
 Integração com ferramentas populares de persistência de dados.
 Tecnologias Utilizadas:
 
-Linguagem de Programação: 
 <p align="left">
   🦄 Language: <strong> 
   
@@ -25,8 +24,10 @@ Linguagem de Programação:
   
   </strong>
 </p>
+
 Banco de Dados: [Inserir Banco de Dados Utilizado]
 Ferramentas de Teste: [Inserir Ferramentas de Teste Utilizadas, se aplicável]
+
 Instruções de Uso:
 
 Clone o repositório.
