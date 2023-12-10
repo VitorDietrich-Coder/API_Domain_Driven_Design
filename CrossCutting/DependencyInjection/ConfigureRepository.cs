@@ -1,6 +1,6 @@
-﻿using Data.Context;
-using Data.Implementation;
-using Data.Repository;
+﻿using Api.Data.Context;
+using Api.Data.Implementation;
+using Api.Data.Repository;
 using Domain.Interfaces;
 using Domain.Repository;
 using Microsoft.EntityFrameworkCore;
@@ -20,7 +20,7 @@ namespace CrossCutting.DependencyInjection
             // );
 
             serviceCollection.AddDbContext<MyContext>(
-                options => options.UseSqlServer("Server=.;Database=DB_Api_DDD;Trusted_Connection=True;MultipleActiveResultSets=true;")
+                options => options.UseSqlServer("Server=.;Database=DB_Api_teste_DDD;Trusted_Connection=True;MultipleActiveResultSets=true;")
             );
         }
     }

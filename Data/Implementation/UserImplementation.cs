@@ -1,5 +1,5 @@
-﻿using Data.Context;
-using Data.Repository;
+﻿using Api.Data.Context;
+using Api.Data.Repository;
 using Domain.Entities;
 using Domain.Repository;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.Implementation
+namespace Api.Data.Implementation
 {
     public class UserImplementation : BaseRepository<UsuarioEntity>, IUserRepository
     {

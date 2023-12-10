@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Data.Context;
-using Data.Implementation;
+using Api.Data.Context;
+using Api.Data.Implementation;
 using Domain.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;

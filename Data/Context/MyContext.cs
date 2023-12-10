@@ -1,4 +1,4 @@
-﻿using Data.Mapping;
+﻿using Api.Data.Mapping;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.Context
+namespace Api.Data.Context
 {
     public class MyContext : DbContext
     {

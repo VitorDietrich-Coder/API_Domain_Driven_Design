@@ -1,4 +1,4 @@
-﻿using Data.Context;
+﻿using Api.Data.Context;
 using Domain.Entities.Common;
 using Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.Repository
+namespace Api.Data.Repository
 {
     public class BaseRepository<T> : IRepository<T> where T : BaseEntity
     {

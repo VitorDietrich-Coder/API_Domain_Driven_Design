@@ -1,4 +1,4 @@
-﻿using Data.Context;
+﻿using Api.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -27,7 +27,7 @@ namespace Api.Data.Test
         {
         var serviceCollection = new ServiceCollection();    
         serviceCollection.AddDbContext<MyContext>(
-            o => o.UseSqlServer("Server=.;Database=DB_Api_DDD;Trusted_Connection=True;MultipleActiveResultSets=true;"), ServiceLifetime.Transient
+            o => o.UseSqlServer($"Server=.;Database={DatabaseName};Trusted_Connection=True;MultipleActiveResultSets=true;"), ServiceLifetime.Transient
         );
             ServiceProvider = serviceCollection.BuildServiceProvider();
             using (var context = ServiceProvider.GetService<MyContext>())

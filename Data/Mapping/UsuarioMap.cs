@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.Mapping
+namespace Api.Data.Mapping
 {
     public class UsuarioMap : IEntityTypeConfiguration<UsuarioEntity>
     {
