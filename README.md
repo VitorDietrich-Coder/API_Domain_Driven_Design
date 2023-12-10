@@ -34,9 +34,9 @@ Tecnologias Utilizadas:
 </p>
 
 <p align="left">
-   Banco de Dados: <strong>
+   Ferramentas de Teste: <strong>
   
- Ferramentas de Teste: XUNIT
+  XUNIT
   
   </strong>
 </p>
