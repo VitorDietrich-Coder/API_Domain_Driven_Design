@@ -25,8 +25,22 @@ Tecnologias Utilizadas:
   </strong>
 </p>
 
-Banco de Dados: [Inserir Banco de Dados Utilizado]
-Ferramentas de Teste: [Inserir Ferramentas de Teste Utilizadas, se aplicável]
+<p align="left">
+   Banco de Dados: <strong>
+  
+ ![MicrosoftSQLServer](https://img.shields.io/badge/Microsoft%20SQL%20Server-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white)
+  
+  </strong>
+</p>
+
+<p align="left">
+   Banco de Dados: <strong>
+  
+ Ferramentas de Teste: XUNIT
+  
+  </strong>
+</p>
+
 
 Instruções de Uso:
 
