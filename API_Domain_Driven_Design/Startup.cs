@@ -1,10 +1,13 @@
 ﻿using Api.CrossCutting.DependencyInjection;
 using Api.CrossCutting.Mappings;
+using Api.Data.Context;
 using AutoMapper;
 using CrossCutting.DependencyInjection;
+using Domain.Entities;
 using Domain.Security;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
@@ -106,8 +109,6 @@ namespace API_Domain_Driven_Design
                     .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme‌​)
                     .RequireAuthenticatedUser().Build());
             });
-
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -117,12 +118,34 @@ namespace API_Domain_Driven_Design
             {
                 app.UseDeveloperExceptionPage();
             }
-
+           
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "API DDD");
             });
+
+            using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+            {
+                var dbContext = serviceScope.ServiceProvider.GetService<MyContext>();
+                dbContext.Database.Migrate(); // Certifique-se de que o banco de dados esteja criado e atualizado
+
+                // Verifica se não há dados de usuário no banco antes de adicionar
+                if (!dbContext.Usuarios.Any())
+                {
+                    dbContext.Usuarios.Add(new UsuarioEntity
+                    {
+                        Id = Guid.NewGuid(),
+                        Email = "ddd@teste.com",
+                        Nome = "Administrador",
+                        Telefone = "45 998484921",
+                        CreateAt = DateTime.Now,
+                        UpdateAt = DateTime.Now,
+                    });
+
+                    dbContext.SaveChanges();
+                }
+            }
 
             app.UseRouting();
             app.UseAuthorization();
