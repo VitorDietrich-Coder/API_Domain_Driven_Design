@@ -21,7 +21,7 @@ namespace API_Domain_Driven_Design.Controllers
 
         [Authorize("Bearer")]
         [HttpGet]
-        public async Task<ActionResult> GetAll([FromServices] IUserService userService)
+        public async Task<ActionResult> GetAll()
         {
             if(!ModelState.IsValid)
             {
@@ -30,7 +30,7 @@ namespace API_Domain_Driven_Design.Controllers
 
             try
             { 
-                return Ok (await userService.GetAll()); 
+                return Ok (await _service.GetAll()); 
             }
             catch(ArgumentException ex) 
             {
