@@ -1,4 +1,5 @@
 ﻿using Api.Data.Context;
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -33,6 +34,18 @@ namespace Api.Data.Test
             using (var context = ServiceProvider.GetService<MyContext>())
             {
                 context.Database.EnsureCreated();
+
+                context.Usuarios.Add(new UsuarioEntity
+                {
+                    Id = Guid.NewGuid(),
+                    Email = "ddd@teste.com",
+                    Nome = "Administrador",
+                    Telefone = "45 99848445",
+                    CreateAt = DateTime.Now,
+                    UpdateAt = DateTime.Now,
+                });
+
+                context.SaveChanges();
             }
         }
 

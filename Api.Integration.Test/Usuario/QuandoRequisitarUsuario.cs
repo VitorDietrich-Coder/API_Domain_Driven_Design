@@ -27,11 +27,12 @@ namespace Api.Integration.Test.Usuario
             var userDto = new UserDtoCreate()
             {
                 Nome = _name,
-                Email = _email
+                Email = _email,
+                Telefone = "45 99841"
             };
 
             //Post
-            var response = await PostJsonAsync(userDto, $"{hostApi}users", client);
+            var response = await PostJsonAsync(userDto, $"{hostApi}UsersControllers", client);
             var postResult = await response.Content.ReadAsStringAsync();
             var registroPost = JsonConvert.DeserializeObject<UserDtoCreateResult>(postResult);
             Assert.Equal(HttpStatusCode.Created, response.StatusCode);
@@ -40,7 +41,7 @@ namespace Api.Integration.Test.Usuario
             Assert.True(registroPost.Id != default(Guid));
 
             //Get All
-            response = await client.GetAsync($"{hostApi}users");
+            response = await client.GetAsync($"{hostApi}UsersControllers");
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
             var jsonResult = await response.Content.ReadAsStringAsync();
             var listaFromJson = JsonConvert.DeserializeObject<IEnumerable<UserDto>>(jsonResult);
@@ -52,13 +53,14 @@ namespace Api.Integration.Test.Usuario
             {
                 Id = registroPost.Id,
                 Nome = Faker.Name.FullName(),
-                Email = Faker.Internet.Email()
+                Email = Faker.Internet.Email(),
+                Telefone = "45 999999"
             };
 
             //PUT
             var stringContent = new StringContent(JsonConvert.SerializeObject(updateUserDto),
                                     Encoding.UTF8, "application/json");
-            response = await client.PutAsync($"{hostApi}users", stringContent);
+            response = await client.PutAsync($"{hostApi}UsersControllers", stringContent);
             jsonResult = await response.Content.ReadAsStringAsync();
             var registroAtualizado = JsonConvert.DeserializeObject<UserDtoUpdateResult>(jsonResult);
 
@@ -67,7 +69,7 @@ namespace Api.Integration.Test.Usuario
             Assert.NotEqual(registroPost.Email, registroAtualizado.Email);
 
             //GET Id
-            response = await client.GetAsync($"{hostApi}users/{registroAtualizado.Id}");
+            response = await client.GetAsync($"{hostApi}UsersControllers/{registroAtualizado.Id}");
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
             jsonResult = await response.Content.ReadAsStringAsync();
             var registroSelecionado = JsonConvert.DeserializeObject<UserDto>(jsonResult);
@@ -76,7 +78,7 @@ namespace Api.Integration.Test.Usuario
             Assert.Equal(registroSelecionado.Email, registroAtualizado.Email);
 
             //DELETE
-            response = await client.DeleteAsync($"{hostApi}users/{registroSelecionado.Id}");
+            response = await client.DeleteAsync($"{hostApi}UsersControllers/{registroSelecionado.Id}");
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
 
             //GET ID depois do DELETE

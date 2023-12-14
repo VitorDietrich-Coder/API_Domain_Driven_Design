@@ -43,7 +43,7 @@ namespace Api.Integration.Test
         {
             var loginDto = new LoginDto()
             {
-                Email = "DDD@teste.com"
+                Email = "ddd@teste.com"
             };
 
             var resultLogin = await PostJsonAsync(loginDto, $"{hostApi}login", client);
@@ -51,7 +51,7 @@ namespace Api.Integration.Test
             var loginObject = JsonConvert.DeserializeObject<LoginResponseDto>(jsonLogin);
 
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
-                                                         loginObject.accessToken);
+                                                         loginObject?.accessToken);
 
 
         }

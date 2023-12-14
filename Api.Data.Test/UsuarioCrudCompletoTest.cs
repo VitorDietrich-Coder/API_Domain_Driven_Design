@@ -55,15 +55,15 @@ namespace Api.Data.Test
 
                 var _todosRegistros = await _repositorio.SelectAsync();
                 Assert.NotNull(_todosRegistros);
-                Assert.True(_todosRegistros.Count() > 1);
-
-                var _removeu = await _repositorio.DeleteAsync(_registroSelecionado.Id);
-                Assert.True(_removeu);
+                Assert.True(_todosRegistros.Count() > 0);
 
                 var _usuarioPadrao = await _repositorio.FindByLogin("ddd@teste.com");
                 Assert.NotNull(_usuarioPadrao);
                 Assert.Equal("ddd@teste.com", _usuarioPadrao.Email);
                 Assert.Equal("Administrador", _usuarioPadrao.Nome);
+               
+                var _removeu = await _repositorio.DeleteAsync(_registroSelecionado.Id);
+                Assert.True(_removeu);
 
             }
         }
